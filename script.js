@@ -28,7 +28,7 @@ const resultWinner = document.querySelectorAll(".results__winner");
 const resultText = document.getElementById("results__text");
 const playButton = document.getElementById("play-again");
 const againstText = document.getElementById("results__against");
-const btnNExt = document.getElementById("next_btn");
+const btnNExt = document.querySelector("#next_btn");
 const btnPlayAgain = document.getElementById("go_back");
 const celebModel = document.querySelector(".celeb__container");
 var playerScore;
@@ -137,6 +137,9 @@ btnPlayAgain.addEventListener("click", () => {
 
 playButton.addEventListener("click", () => {
   gameDiv.classList.toggle("hidden");
+  if (!btnNExt.classList.contains("hidden")) {
+    btnNExt.classList.toggle("hidden");
+  }
   resultsDiv.classList.toggle("hidden");
   resultDivs.forEach((resultDiv) => {
     resultDiv.innerHTML = "";
